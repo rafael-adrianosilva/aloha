@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - CrossVerse XYZ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" href="imgs/logov3.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="botoes">
+        <button id="btnsDiferentes" onclick="window.location.href='index.html'"><i
+                class="bi bi-arrow-left"></i></button>
+        <button id="btnTema" class="temaEscuro" onclick="mudarTema()">
+            <i class="bi bi-moon-stars-fill"></i>
+        </button>
+    </div>
+    <main class="caixa-cad">
+        <form action="../_php/cadastro.php" class="caixa-form-cad" method="POST" onsubmit="return validar()">
+            <div class="caixa-cad-header">
+                <h3>Cadastro</h3>
+            </div>
+            <div class="caixa-cad-input">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+            </div>
+            <div class="caixa-cad-input">
+                <label for="conv/aluno">Convidado ou Aluno</label>
+                <select name="conv/aluno" id="conv/aluno" onchange="alunoConvidado()" required>
+                    <option value="semValor" disabled selected>Selecione Uma das Opções</option>
+                    <option value="Aluno">Aluno</option>
+                    <option value="Convidado">Convidado</option>
+                </select>
+            </div>
+            <div class="caixa-cad-input" id="turmaDiv" style="display: none;" required>
+                <label for="turma">Turma</label>
+                <select name="turma" id="turma">
+                    <option value="semValor" disabled selected>Selecione sua Turma</option>
+                    <option value="MELI2">MELI2</option>
+                    <option value="MU1">MU1</option>
+                    <option value="MCE1">MCE1</option>
+                    <option value="MTAI1">MTAI1</option>
+                    <option value="MAMVP1">MAMVP1</option>
+                    <option value="MMAVP4">MMAVP4</option>
+                    <option value="MALP2A">MALP2A</option>
+                    <option value="MALM1">MALM1</option>
+                    <option value="MALP2B">MALP2B</option>
+                    <option value="MS2">MS2</option>
+                    <option value="TF1">TF1</option>
+                    <option value="TALP2">TALP2</option>
+                    <option value="TF3">TF3</option>
+                    <option value="TELI2">TELI2</option>
+                    <option value="TTAI1">TTAI1</option>
+                    <option value="TOP3A">TOP3A</option>
+                    <option value="TOP3B">TOP3B</option>
+                    <option value="TTS3A">TTS3A</option>
+                    <option value="TTS3B">TTS3B</option>
+                    <option value="TMV3">TMV3</option>
+                    <option value="TDS2">TDS2</option>
+                    <option value="TM SEDUC 1">TM SEDUC 1</option>
+                    <option value="DEV SESI 1A">DEV SESI 1A</option>
+                    <option value="DEV SESI 1B">DEV SESI 1B</option>
+                    <option value="DEV SESI 2">DEV SESI 2</option>
+                    <option value="TI MULTI SESI 2T">TI MULTI SESI 2T</option>
+                    <option value="TI MULTI SESI 1T">TI MULTI SESI 1T</option>
+                </select>
+            </div>
+            <div class="caixa-cad-input" id="telefoneDiv" style="display: none;">
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="+00 (00) 00000-0000" required>
+            </div>
+            <div class="caixa-cad-btn">
+                <!-- <button onclick="document.querySelector('.modal').style.display='flex'">Cadastrar</button> -->
+                <button type='submit'>Cadastrar</button>
+            </div>
+        </form>
+        <div class="caixa-resultado">
+            <div class="caixa-resultado-conteudo">
+                <button id="btnFecha"><i class="bi bi-x-lg"></i></button>
+                <div class="caixa-resultado-icone">
+                    <i class="bi bi-check2-circle"></i>
+                </div>
+                <div class="caixa-resultado-txt">
+                    <h2>Seu Cadastro foi realizado com <strong>SUCESSO</strong></h2>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/scripts.js" defer></script>
+</body>
+
+</html>

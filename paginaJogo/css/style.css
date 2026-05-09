@@ -1,0 +1,489 @@
+/* Reset e Definições Globais */
+* {
+    margin: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    font-family: "Pixelify Sans", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.4s all ease-in-out;
+    outline: none;
+}
+
+/* Variaveis (só tá assim pq fica fácil de fazer outro tema dps) */
+:root {
+    --corNav: black;
+    --corFundo: #0A0A0F;
+
+    --corTexto: white;
+    --corLinks: #6C2DC7;
+    --corDestaque: rgb(69, 1, 255);
+
+    /* Peguei essa sombra pronta em um site com vários exemplos (achei bonita)*/
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
+    --corBordas: rgb(111, 0, 255);
+
+    --arredondamento: 1rem;
+    --padraoBorda: 2px solid;
+    --hoverBtn: rgba(70, 70, 70, 0.1);
+
+    --corTxtTabela: white;
+}
+
+body {
+    background: var(--corFundo);
+    width: 100%;
+    height: 100vh;
+    color: var(--corTexto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Barra de Navegação */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    background: var(--corNav);
+    display: flex;
+    align-items: center;
+    /* Mexi tanto que esse space-around aqui n precisava */
+    justify-content: space-around;
+
+    z-index: 2;
+    max-height: 120px;
+}
+
+.navbar-img {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.navbar-img img {
+    width: 80px;
+}
+
+.navbar-links {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: var(--corLinks);
+    font-size: 17px;
+}
+
+.navbar-links a:hover {
+    color: var(--corDestaque);
+}
+
+.navbar-cfg {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+/* #btnsDiferentes {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+} */
+
+.navbar-cfg button,
+#btnsDiferentes,
+#btnTema {
+    padding: 1rem;
+    font-size: 2rem;
+    color: var(--corLinks);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.navbar-cfg button:hover,
+#btnsDiferentes:hover {
+    background: var(--hoverBtn);
+    color: var(--corDestaque);
+}
+
+/* Conteudo Principal */
+.conteudo-principal {
+    width: 95%;
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-principal header {
+    margin-top: 5%;
+}
+
+.caixa-apresentacao {
+    margin-top: 3%;
+}
+
+.caixa-mecanicas {
+    margin-top: 3%;
+}
+
+.caixa-colab {
+    width: 60%;
+    border-radius: var(--arredondamento);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+    gap: 70px;
+    margin-top: 5%;
+}
+
+.caixa {
+    width: 90%;
+    max-width: 350px;
+    min-width: 200px;
+    /* height: 370px; */
+    background: var(--corNav);
+    border: var(--padraoBorda) var(--corLinks);
+    border-radius: var(--arredondamento);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    z-index: 1;
+    /* overflow: auto; */
+    gap: 10px;
+}
+
+.caixa-img {
+    width: 95%;
+    height: 300px;
+}
+
+.caixa-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--arredondamento);
+}
+
+.caixa .caixa-txt h3 {
+    color: var(--corLinks);
+}
+
+.caixa:hover {
+    scale: 1.1;
+    border-color: var(--corDestaque);
+}
+
+.caixa-integrantes {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Tava dando problema para fazer em js dai aqui foi então larguei mão de adicionar um evento no js */
+.caixa:hover .caixa-integrantes {
+    display: flex;
+}
+
+.caixa-proj {
+    width: 100%;
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.caixa-game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.caixa-game-img {
+    width: 40%;
+}
+
+.caixa-game-img img {
+    width: 100%;
+    border-radius: var(--arredondamento);
+    display: block;
+}
+
+.caixa-btn button {
+    width: 150px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--corTexto);
+    background: var(--corLinks);
+    border-radius: var(--arredondamento);
+    border: 2px solid var(--corDestaque);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.caixa-btn button:hover {
+    border-color: var(--corLinks);
+    background: var(--corDestaque);
+    transform: scale(1.1);
+}
+
+.caixa-rank {
+    width: 90%;
+    max-width: 800px;
+    background: var(--corNav);
+    border: var(--padraoBorda) var(--corLinks);
+    border-radius: var(--arredondamento);
+    padding: 2rem;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.caixa-rank h2 {
+    font-size: 2.5rem;
+    color: var(--corDestaque);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.caixa-rank table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--corTxtTabela);
+}
+
+.caixa-rank th,
+.caixa-rank td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--corLinks);
+}
+
+.caixa-rank thead th {
+    background: linear-gradient(var(--corLinks), var(--corDestaque));
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Remove a borda da última linha */
+.caixa-rank tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Cor alternada para as linhas */
+.caixa-rank tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Efeito de hover nas linhas */
+.caixa-rank tbody tr:hover {
+    background-color: rgba(108, 45, 199, 0.3);
+    /* Roxo com transparência */
+}
+
+/* Estilo para as medalhas dos 3 primeiros */
+.medal {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+/* Footer */
+.rodape {
+    margin-top: 5%;
+    width: 95%;
+    padding: 1rem;
+    border-radius: var(--arredondamento);
+    background: var(--corNav);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rodape-img img {
+    width: 150px;
+    border-radius: var(--arredondamento);
+}
+
+.rodape-txt a {
+    text-decoration: none;
+    color: var(--corLinks);
+}
+
+.rodape-txt a:hover {
+    color: var(--corDestaque);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        overflow: auto;
+    }
+
+    .navbar-links a {
+        margin-inline: 15px;
+    }
+}
+
+.caixa-cad {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa-form-cad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 600px;
+    border: 2px solid var(--corBordas);
+    background-color: var(--corFundo);
+    border-radius: 25px;
+    gap: 7%;
+    box-shadow: var(--sombra);
+}
+
+.caixa-cad-input {
+    width: 85%;
+    font-size: 17px;
+    border-radius: 15px;
+    background: transparent;
+    border: 2px solid var(--corLinks);
+    box-shadow: var(--sombra);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.caixa-cad-input label {
+    width: 25%;
+}
+
+.caixa-cad-input input,
+.caixa-cad-input select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: var(--corLinks);
+    color: #FFF;
+
+    &::placeholder {
+        color: #FFF;
+    }
+
+}
+
+.caixa-cad-input input:focus {
+    background: transparent;
+    border-radius: 10px;
+    border-bottom: 2px solid var(--corLinks);
+    color: var(--corLinks);
+}
+
+.caixa-cad-btn button {
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    background: var(--corLinks);
+    border-radius: var(--arredondamento);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: var(--corLinks);
+        background: var(--corDestaque);
+        transform: scale(1.1);
+    }
+}
+
+.botoes {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        visibility: hidden;
+    }
+}
+
+.caixa-resultado {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.caixa-resultado-conteudo {
+    background: var(--corFundo);
+    width: 50%;
+    max-width: 550px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    border: 2px solid var(--corDestaque);
+}
+
+.caixa-resultado-icone {
+    font-size: 100px;
+    color: var(--corDestaque);
+}
+.caixa-resultado-txt{
+    text-align: center;
+}
+
+.caixa-resultado-txt strong {
+    font-size: 20px;
+    color: var(--corDestaque);
+}
+
+#btnFecha {
+    background: none;
+    border-radius: 50%;
+    scale: 1.3;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    color: var(--corDestaque);
+}
+
+#btnFecha:hover {
+    color: var(--corTexto);
+}

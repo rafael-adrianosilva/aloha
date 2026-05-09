@@ -1,0 +1,1001 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P"
+    ;
+}
+
+/* body {
+    /* background-color: rgb(150, 84, 8); 
+} */
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    display: none;
+    /* height: 95vh; */
+    /* border-bottom: 15px solid rgb(35, 160, 35); */
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+#pontoTexto {
+    position: absolute;
+    top: 10px;
+    left: 175px;
+    transition: -50%;
+}
+
+.jump {
+    animation: jump 700ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 500px;
+    animation: clouds-animation 5s infinite linear;
+    z-index: 2;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    70% {
+        bottom: 130px;
+    }
+
+    80% {
+        bottom: 75px;
+    }
+
+    90% {
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+/* Adições */
+
+/*(Código do Matheus) */
+.info-board {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 3;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 195px;
+    padding: 10px;
+}
+
+.info-board img {
+    width: 45px;
+}
+
+.coin {
+    display: flex;
+    position: absolute;
+    width: 80px;
+    bottom: 120px;
+    animation: coin-animation 5s infinite linear;
+}
+
+@keyframes coin-animation {
+    from {
+        right: -180px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+@keyframes texto-moeda {
+    from {
+        top: 10px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0px;
+        opacity: 0;
+    }
+}
+
+.sky-stars {
+    display: none;
+    justify-content: center;
+}
+
+.stars {
+    animation: stars-animation 3s infinite;
+}
+
+@keyframes stars-animation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.div-continuar {
+    display: none;
+    z-index: 4;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    color: white;
+}
+
+.div-continuar button {
+    width: 15%;
+    height: 5%;
+    max-width: 150px;
+    max-height: 50px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: rgb(95, 95, 95);
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.div-continuar button:hover {
+    background-color: rgb(54, 54, 54);
+    border-color: rgb(95, 95, 95);
+}
+
+.dragonair {
+    width: 90px;
+    position: absolute;
+    animation: dragonair-animation 90s infinite;
+}
+
+@keyframes dragonair-animation {
+    from {
+        left: -550px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.goku {
+    width: 250px;
+    animation: goku-animation 10s infinite;
+    position: absolute;
+    display: none;
+}
+
+@keyframes goku-animation {
+    from {
+        left: -550px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+.dragon {
+    display: none;
+    justify-self: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.made-in-heaven {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+}
+
+/* Codigo do John */
+
+.tela_inicio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: absolute;
+    background-color: rgba(65, 37, 85, 0.384);
+    /* Alterado para Roxo */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    font-size: 50px;
+    z-index: 4;
+}
+
+.logo-senai {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    /* Cor roxa para os botões */
+    color: white;
+    width: 310px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    border: #6940fc 2px solid;
+    background-color: #8A2BE2;
+
+}
+
+.start-button:hover {
+    background-color: #6A1B9A;
+    transform: scale(1.05);
+    transition: 0.3s;
+    color: white;
+}
+
+.character-select {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e42929;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.character-select:hover {
+    background-color: #e90e0e;
+    transform: scale(1.05);
+    transition: 0.3s;
+    color: white;
+}
+
+.personagem-sel {
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.8);
+    margin-top: 80px;
+    width: 200px;
+    height: 150px;
+}
+
+.pretin {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    animation: clouds-animation 3s infinite linear;
+    z-index: 2;
+}
+
+.goku_golpes {
+    display: flex;
+    margin-left: 550px;
+    z-index: 1;
+    width: 800px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Nahyron fez aqui */
+
+.chao {
+    position: fixed;
+    bottom: 0px;
+    z-index: -1;
+}
+
+/*  Nahyron - maior parte, Miguel - ajustes na posição  */
+.personagens-selec,
+.creditos-area {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+    max-width: 900px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 2px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    /* Sombra para dar profundidade */
+}
+
+.section-title {
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #8A2BE2;
+    padding-bottom: 10px;
+}
+
+.character-grid,
+.credits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.personagens-selec img {
+    width: 150px;
+    height: 120px;
+    object-fit: contain;
+    cursor: pointer;
+    border: 4px solid #555;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Efeito de hover nos personagens */
+.personagens-selec img:hover {
+    transform: scale(1.1);
+    border-color: #8A2BE2;
+}
+
+.creditos-area img {
+    width: 200px;
+    border: 4px solid #555;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.creditos-area img:hover {
+    transform: scale(1.05);
+}
+
+/* Nahyron fez daqui pra baixo (tirando o batman com hover ali) */
+.luffy:hover {
+    border: 5px solid white;
+    transition: 0.3s;
+}
+
+.marioDance:hover {
+    border: 5px solid red;
+    transition: 0.3s;
+}
+
+.link:hover {
+    border: 5px solid green;
+    transition: 0.3s;
+}
+
+.kirby:hover {
+    border: 5px solid pink;
+    transition: 0.3s;
+}
+
+.pikachu:hover {
+    border: 5px solid yellow;
+    transition: 0.3s;
+}
+
+.sonic:hover {
+    border: 5px solid blue;
+    transition: 0.3s;
+}
+
+/* Miguel */
+.batman:hover {
+    border: 5px solid rgb(76, 77, 102);
+    transition: 0.3s;
+}
+
+.btn-voltar {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+}
+
+/* Novo estilo do botão Voltar */
+.recarga {
+    display: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 2px solid #777;
+    border-radius: 8px;
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #ccc;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recarga:hover {
+    color: #fff;
+    border-color: #8A2BE2;
+    background-color: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 10px #8A2BE2;
+    transform: scale(1.05);
+}
+
+.character-selected {
+    border-color: #A020F0;
+    /* Roxo brilhante */
+    box-shadow: 0 0 5px #A020F0,
+        0 0 10px #A020F0,
+        0 0 15px #A020F0,
+        0 0 20px #A020F0;
+    transform: scale(1.1);
+}
+
+.personagem-secreto {
+    display: none;
+}
+
+/* Adiciona um espaço entre os corações */
+.heart-icon {
+    width: 45px;
+    margin: 0 2px;
+}
+
+/* (nahyron) fundo da tela de seleção de personagens, aqui ajusto ela pra fica no centro e do tamanho da pagina, dps vo arrumar usando outra medida de tamanho */
+.space {
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 108%;
+    z-index: 1;
+    display: none;
+
+}
+
+/* (nahyron) botão pra olhar o fundo da tela de personagens*/
+
+.olhar {
+    z-index: 5;
+    position: relative;
+    bottom: -250px;
+    right: -100%;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 2px solid #777;
+    border-radius: 8px;
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #ccc;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    align-items: center;
+
+}
+
+.olhar:hover {
+    color: #fff;
+    border-color: #8A2BE2;
+    background-color: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 10px #8A2BE2;
+    transform: scale(1.05);
+}
+
+
+/* (nahyron) botão pra parar de olhar o fundo da tela de personagens*/
+
+.pareiOlho {
+    z-index: 5;
+    position: relative;
+    bottom: -500px;
+    right: -90%;
+    width: 180px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    border-color: #8A2BE2;
+    background-color: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 10px #8A2BE2;
+    transform: scale(1.05);
+
+}
+
+
+.pareiOlho:hover {
+    color: #fff;
+    border-color: #8A2BE2;
+    background-color: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 10px #8A2BE2;
+    transform: scale(1.05);
+}
+
+/* KAUÃ CSS DA TELA DE NOME :> */
+/* 22:11 */
+.name-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#141e30, #243b55);
+    color: white;
+    gap: 20px;
+}
+
+.name-screen h2 {
+    font-size: 28px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.name-screen input {
+    padding: 10px;
+    font-size: 18px;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+.name-screen button {
+    padding: 10px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8A2BE2;
+    /* Roxo */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.name-screen button:hover {
+    background-color: #6A1B9A;
+}
+
+/* Polish visual do jogo */
+:root {
+    --ui-bg: rgba(13, 18, 25, 0.82);
+    --ui-border: rgba(255, 255, 255, 0.28);
+    --ui-text: #f7fbff;
+    --ui-accent: #26d7c7;
+    --ui-danger: #ff4d6d;
+    --ui-warm: #ffc857;
+    --ui-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+body {
+    background: #111827;
+}
+
+.game-board {
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.92) 0 34px, transparent 35px),
+        linear-gradient(180deg, #77c8f5 0%, #bdefff 56%, #e9f7ff 100%);
+    transition: background 0.5s ease;
+}
+
+.game-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.23;
+}
+
+.game-board::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0 12px, transparent 12px 24px),
+        linear-gradient(#34d26f, #15954d);
+    box-shadow: 0 -8px 24px rgba(24, 82, 50, 0.24);
+}
+
+.game-board.stage-sunset {
+    background:
+        radial-gradient(circle at 72% 20%, rgba(255, 222, 120, 0.95) 0 42px, transparent 43px),
+        linear-gradient(180deg, #ffb36b 0%, #ff7fa8 55%, #7ed6d8 100%);
+}
+
+.game-board.stage-night {
+    background:
+        radial-gradient(circle at 72% 18%, rgba(247, 251, 255, 0.85) 0 30px, transparent 31px),
+        linear-gradient(180deg, #16233d 0%, #1f3d5c 56%, #0d1727 100%);
+}
+
+.pipe,
+.mario,
+.coin,
+.clouds,
+.dragonair,
+.dragon,
+.goku,
+.pretin,
+.goku_golpes,
+.sky-stars {
+    position: absolute;
+}
+
+.pipe {
+    z-index: 3;
+    filter: drop-shadow(0 7px 0 rgba(0, 0, 0, 0.18));
+}
+
+.mario {
+    z-index: 4;
+    image-rendering: auto;
+    filter: drop-shadow(0 10px 0 rgba(0, 0, 0, 0.18));
+}
+
+.coin {
+    z-index: 3;
+    filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.18));
+}
+
+.info-board {
+    top: 16px;
+    left: 16px;
+    margin: 0;
+    width: auto;
+    min-width: 168px;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    color: var(--ui-text);
+    background: var(--ui-bg);
+    border: 2px solid var(--ui-border);
+    border-radius: 8px;
+    box-shadow: var(--ui-shadow);
+    backdrop-filter: blur(8px);
+}
+
+.scores {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#pontos {
+    min-width: 64px;
+    color: var(--ui-text) !important;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+#pontoTexto {
+    left: 108px;
+    color: var(--ui-warm);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+.lifes {
+    display: flex;
+    gap: 4px;
+}
+
+.heart-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.rank {
+    top: 16px !important;
+    left: auto !important;
+    right: 16px;
+    width: auto !important;
+    pointer-events: none;
+}
+
+.rank table {
+    width: 268px !important;
+    height: auto !important;
+    padding: 10px !important;
+    color: var(--ui-text);
+    background: var(--ui-bg);
+    border: 2px solid var(--ui-border);
+    border-radius: 8px;
+    border-spacing: 0;
+    box-shadow: var(--ui-shadow);
+    backdrop-filter: blur(8px);
+}
+
+.rank th,
+.rank td {
+    padding: 6px 8px;
+    font-size: 9px;
+}
+
+.rank thead {
+    color: var(--ui-warm) !important;
+}
+
+.tela_inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background:
+        linear-gradient(rgba(9, 13, 24, 0.68), rgba(9, 13, 24, 0.82)),
+        radial-gradient(circle at 50% 22%, rgba(38, 215, 199, 0.28), transparent 36%);
+}
+
+.logo-senai {
+    width: min(350px, 72vw);
+    margin: 0;
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45));
+}
+
+.menu-buttons {
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.start-button,
+.recarga,
+.olhar,
+.pareiOlho,
+.name-screen button,
+.div-continuar button {
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(180deg, #203044, #111827);
+    color: var(--ui-text);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(38, 215, 199, 0.16) inset;
+}
+
+.start-button {
+    width: min(360px, 82vw);
+    min-height: 52px;
+    color: var(--ui-text);
+    font-size: clamp(12px, 2.6vw, 18px);
+}
+
+.start-button:hover,
+.recarga:hover,
+.olhar:hover,
+.pareiOlho:hover,
+.name-screen button:hover,
+.div-continuar button:hover {
+    background: linear-gradient(180deg, #254057, #152235);
+    border-color: var(--ui-accent);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.personagens-selec,
+.creditos-area {
+    width: min(920px, calc(100vw - 32px));
+    max-height: calc(100vh - 96px);
+    overflow: auto;
+    padding: 24px;
+    gap: 18px;
+    background: rgba(11, 16, 25, 0.9);
+    border: 2px solid rgba(38, 215, 199, 0.36);
+    border-radius: 8px;
+    box-shadow: var(--ui-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    margin: 0;
+    color: var(--ui-text);
+    border-bottom-color: var(--ui-accent);
+    font-size: clamp(16px, 3vw, 26px);
+}
+
+.character-grid,
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+    width: 100%;
+    gap: 14px;
+}
+
+.personagens-selec img,
+.creditos-area img {
+    width: 100%;
+    height: 112px;
+    padding: 8px;
+    object-fit: contain;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.personagens-selec img:hover,
+.creditos-area img:hover,
+.character-selected {
+    border-color: var(--ui-accent) !important;
+    box-shadow: 0 0 0 3px rgba(38, 215, 199, 0.16), 0 12px 20px rgba(0, 0, 0, 0.28);
+    transform: translateY(-3px);
+}
+
+.olhar,
+.pareiOlho {
+    position: static;
+    width: auto;
+    min-width: 160px;
+    height: 48px;
+    padding: 10px 16px;
+}
+
+.btn-voltar {
+    bottom: 24px;
+}
+
+.recarga {
+    min-height: 44px;
+}
+
+.div-continuar {
+    gap: 14px;
+    background: rgba(8, 12, 19, 0.88);
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+.div-continuar p {
+    max-width: 520px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.div-continuar button {
+    width: auto;
+    min-width: 160px;
+    min-height: 46px;
+    max-width: none;
+    max-height: none;
+}
+
+.name-screen {
+    background:
+        radial-gradient(circle at 50% 24%, rgba(38, 215, 199, 0.2), transparent 35%),
+        linear-gradient(180deg, #101827, #1a2a3e);
+}
+
+.name-screen h2 {
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+.name-screen input,
+.name-screen select {
+    width: min(360px, 82vw);
+    min-height: 48px;
+    border: 2px solid rgba(255, 255, 255, 0.28);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+@media (max-width: 720px) {
+    .info-board {
+        top: 10px;
+        left: 10px;
+        min-width: 132px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .rank {
+        display: none !important;
+    }
+
+    .clouds {
+        width: 360px;
+    }
+
+    .personagens-selec,
+    .creditos-area {
+        top: 48%;
+        padding: 18px;
+    }
+}
